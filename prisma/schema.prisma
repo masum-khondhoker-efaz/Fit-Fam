@@ -32,6 +32,7 @@ model User {
 
 enum UserRoleEnum {
   USER
+  TRAINER
   ADMIN
   SUPER_ADMIN
 }

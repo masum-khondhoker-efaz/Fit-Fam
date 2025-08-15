@@ -13,43 +13,6 @@ router.post(
   UserControllers.registerUser,
 );
 
-router.post(
-  '/register/saloon-owner',
-  multerUploadMultiple.fields([
-    { name: 'shop_logo', maxCount: 1 },
-    { name: 'shop_images', maxCount: 5 },
-    { name: 'shop_videos', maxCount: 2 },
-  ]),
-  parseBody,
-  validateRequest(UserValidations.createSaloonOwner),
-  UserControllers.registerSaloonOwner,
-);
-
-router.patch(
-  '/update/saloon-owner',
-  multerUploadMultiple.fields([
-    { name: 'shop_logo', maxCount: 1 },
-    { name: 'shop_images', maxCount: 5 },
-    { name: 'shop_videos', maxCount: 2 },
-  ]),
-  parseBody,
-  auth(),
-  validateRequest(UserValidations.updateSaloonOwner),
-  UserControllers.updateSaloonOwner,
-);
-
-
-router.put(
-  '/update/barber',
-  multerUploadMultiple.fields([
-    { name: 'portfolioImages', maxCount: 5 },
-  ]),
-  parseBody,
-  auth(),
-  validateRequest(UserValidations.updateBarber),
-  UserControllers.updateBarber,
-)
-
 router.put(
   '/verify-otp',
   validateRequest(UserValidations.verifyOtpSchema),
