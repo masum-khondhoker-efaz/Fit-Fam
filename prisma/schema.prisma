@@ -19,6 +19,9 @@ model User {
   role         UserRoleEnum @default(USER)
   status       UserStatus   @default(INACTIVE)
   image        String?
+  gender       String?
+  dateOfBirth DateTime?
+  phoneNumber  String?
   otp          Int?
   otpExpiry    DateTime?
   fcmToken     String?

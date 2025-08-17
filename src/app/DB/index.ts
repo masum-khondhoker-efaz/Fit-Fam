@@ -29,15 +29,15 @@ const seedSuperAdmin = async () => {
       const superAdmin = await prisma.user.create({
         data: superAdminData,
       });
-      const admin = await prisma.admin.create({
-        data: {
-          userId: superAdmin.id,
-          isSuperAdmin: true, // Set isSuperAdmin to true
-        },
-      });
+      // const admin = await prisma.admin.create({
+      //   data: {
+      //     userId: superAdmin.id,
+      //     isSuperAdmin: true, // Set isSuperAdmin to true
+      //   },
+      // });
       // Optionally, you can log the created super admin and admin
       console.log('Super Admin created:', superAdmin);
-      console.log('Admin created:', admin);
+      // console.log('Admin created:', admin);
       console.log('Super Admin created successfully.');
     } else {
       return;

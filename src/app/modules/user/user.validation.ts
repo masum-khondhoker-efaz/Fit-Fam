@@ -14,8 +14,8 @@ const registerUser = z.object({
     password: z.string({
       required_error: 'Password is required!',
     }),
-    intendedRole: z
-      .enum(['CUSTOMER', 'SALOON_OWNER', 'BARBER'], {
+    role: z
+      .enum(['USER', 'TRAINER'], {
         required_error: 'Role is required!',
       })
       .optional(),

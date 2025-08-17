@@ -30,12 +30,7 @@ const loginUserFromDB = async (payload: {
   if (!isCorrectPassword) {
     throw new AppError(httpStatus.BAD_REQUEST, 'Password incorrect');
   }
-  if (userData.isProfileComplete === false || userData.isProfileComplete === null ) {
-    throw new AppError(
-      httpStatus.BAD_REQUEST,
-      'Please complete your profile before logging in',
-    );
-  }
+ 
 
   if (userData.isLoggedIn === false) {
   const updateUser = await prisma.user.update({
