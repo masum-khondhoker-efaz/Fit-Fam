@@ -326,7 +326,7 @@ const resendOtpIntoDB = async (payload: any) => {
   });
 
   if (!userData) {
-    throw new AppError(httpStatus.NOT_FOUND, 'User not found!');
+    throw new AppError(httpStatus.NOT_FOUND, 'User not found with this information!');
   }
   const otp = Math.floor(100000 + Math.random() * 900000);
   const otpExpiresAt = new Date();
